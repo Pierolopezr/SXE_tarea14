@@ -1,8 +1,14 @@
-Apartado 1  
+## SXE TAREA 14
 
-<img width="1329" height="889" alt="image" src="https://github.com/user-attachments/assets/43f2f6e7-da0a-4856-b2b7-259880052537" />
-<img width="1401" height="958" alt="Captura de pantalla 2025-12-04 205750" src="https://github.com/user-attachments/assets/6b2786f4-ddc8-41b1-875a-9d1f58f782fd" />
-<img width="1645" height="942" alt="image" src="https://github.com/user-attachments/assets/c333d2d7-f054-433f-8b82-e17826cb4133" />
+### Apartado 1  
+Una vez de conectar pgAdmin con Odoo con la `demo`...  
+
+<img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/43f2f6e7-da0a-4856-b2b7-259880052537" />
+
+Creamos en en apartado de 'tablas', una tabla con los campos mostrados a continuación...  
+
+<img width="700" height="500" alt="Captura de pantalla 2025-12-04 205750" src="https://github.com/user-attachments/assets/6b2786f4-ddc8-41b1-875a-9d1f58f782fd" />
+<img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/c333d2d7-f054-433f-8b82-e17826cb4133" />
 
 
 Apartado 2  
@@ -34,3 +40,4 @@ APARTADO 7
 UPDATE public.res_partner
 	SET  email=REPLACE(email,'%@bilbao.example.com','bilbao.bizkaia.eus') WHERE email LIKE '%@bilbao.example.com';  
 <img width="1692" height="995" alt="image" src="https://github.com/user-attachments/assets/8d7a2db0-e44c-4822-a1f9-e3a220b2d34a" />  
+
