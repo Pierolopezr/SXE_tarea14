@@ -8,13 +8,15 @@ Una vez de conectar pgAdmin con Odoo con la `demo`...
 Creamos en en apartado de 'tablas', una tabla con los campos mostrados a continuación...  
 
 <img width="700" height="500" alt="Captura de pantalla 2025-12-04 205750" src="https://github.com/user-attachments/assets/6b2786f4-ddc8-41b1-875a-9d1f58f782fd" />
-<img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/c333d2d7-f054-433f-8b82-e17826cb4133" />
+<img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/c333d2d7-f054-433f-8b82-e17826cb4133" />  
+
+### Apartado 2   
+Insertamos 5 registros inventados en la tabla a través de una sentencia SQL.  
+
+<img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/0eba2b0e-7750-4114-9e09-1baee029c387" />  
+<img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/e727fb18-345c-47ba-bfde-0b776ecdbfc8" />  
 
 
-Apartado 2  
-
-<img width="1294" height="965" alt="image" src="https://github.com/user-attachments/assets/0eba2b0e-7750-4114-9e09-1baee029c387" />
-<img width="1239" height="919" alt="image" src="https://github.com/user-attachments/assets/e727fb18-345c-47ba-bfde-0b776ecdbfc8" />
 
 Apartado 3  
 <img width="1073" height="597" alt="image" src="https://github.com/user-attachments/assets/41ff8a3a-020d-469c-bb73-0995e2bfd975" />
@@ -40,4 +42,5 @@ APARTADO 7
 UPDATE public.res_partner
 	SET  email=REPLACE(email,'%@bilbao.example.com','bilbao.bizkaia.eus') WHERE email LIKE '%@bilbao.example.com';  
 <img width="1692" height="995" alt="image" src="https://github.com/user-attachments/assets/8d7a2db0-e44c-4822-a1f9-e3a220b2d34a" />  
+
 
