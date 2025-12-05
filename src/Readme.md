@@ -48,13 +48,21 @@ Ordenadas por fecha de factura de modo que la primera sea la más reciente.
 
 `select invoice_partner_display_name,name, invoice_date, amount_untaxed FROM public.account_move where move_type='out_refund' and invoice_date is not null order by invoice_date DESC;`
 
-APARTADO 6  
+### Apartado 6  
+Utilizando las tablas de odoo, obtén un listado de empresas clientes, a las que se les ha emitido más de dos facturas de venta (solo venta) confirmadas, mostrando los siguientes datos: 
+- Nombre de la empresa
+- Número de facturas
+- Total facturado SIN IMPUESTOS
 
-select invoice_partner_display_name nome_empresa, count(*) num_facturas, SUM(amount_untaxed) suma_total_facturas
+`select invoice_partner_display_name nome_empresa, count(*) num_facturas, SUM(amount_untaxed) suma_total_facturas
 FROM public.account_move 
 WHERE move_type='out_invoice' and state='posted'
 GROUP BY nome_empresa having count(*)>2
-;  
+;`  
+
+SUM -> para suma total sin impuestos.  
+move_type y state -> para saber que las facturas son confirmadas y no borradores.  
+Group by + having -> agruparlos en ... y teniendo en cuenta los que tienen más de dos facturas.  
 
 <img width="1635" height="1019" alt="image" src="https://github.com/user-attachments/assets/6aebaebb-60de-4f6f-9246-33e7a332cdb0" />
 
@@ -62,6 +70,7 @@ APARTADO 7
 UPDATE public.res_partner
 	SET  email=REPLACE(email,'%@bilbao.example.com','bilbao.bizkaia.eus') WHERE email LIKE '%@bilbao.example.com';  
 <img width="1692" height="995" alt="image" src="https://github.com/user-attachments/assets/8d7a2db0-e44c-4822-a1f9-e3a220b2d34a" />  
+
 
 
 
