@@ -1,0 +1,86 @@
+## SXE TAREA 14
+
+### Apartado 1  
+Una vez de conectar pgAdmin con Odoo con la `demo`...  
+
+<img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/43f2f6e7-da0a-4856-b2b7-259880052537" />
+
+Creamos en en apartado de 'tablas', una tabla con los campos mostrados a continuación...  
+
+<img width="700" height="500" alt="Captura de pantalla 2025-12-04 205750" src="https://github.com/user-attachments/assets/6b2786f4-ddc8-41b1-875a-9d1f58f782fd" />
+<img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/c333d2d7-f054-433f-8b82-e17826cb4133" />  
+
+### Apartado 2   
+Insertamos 5 registros inventados en la tabla a través de una sentencia SQL.  
+
+<img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/0eba2b0e-7750-4114-9e09-1baee029c387" />  
+<img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/e727fb18-345c-47ba-bfde-0b776ecdbfc8" />  
+
+### Apartado 3  
+Realiza una consulta donde se muestren todos los datos de la tabla EmpresasFCT 
+ordenados por fechaContacto, de modo que en la primera fila salga el que tenga la 
+fecha más reciente. 
+
+Mediante los comandos `SELECT * FROM public."EmpresasFCT" ORDER BY "fechaContacto" DESC;` , nos generará lo pedido. 
+
+<img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/41ff8a3a-020d-469c-bb73-0995e2bfd975" />  
+
+### Apartado 4
+Realiza una consulta que permita obtener un listado de todos los contactos de Odoo (no empresas) con la siguiente información: 
+- Nombre
+- Cuya ciudad NO sea Tracy
+- Nombre comercial de la empresa ordenados alfabéticamente por el nombre comercial de la empresa.
+
+`SELECT name, commercial_company_name FROM public.res_partner where is_company=FALSE and city!='Tracy' ORDER BY commercial_company_name`  
+
+<img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/ca54ba67-64c3-4f7f-8e5f-9c30a4cdaf21" />
+
+### Apartado 5  
+Utilizando las tablas de odoo, obtén un listado de empresas proveedoras, que han 
+emitido algún reembolso (facturas rectificativas de proveedor) 
+- Nombre de la empresa
+- Número de factura
+- Fecha de la factura
+- Total factura SIN impuestos  
+Ordenadas por fecha de factura de modo que la primera sea la más reciente.  
+
+<img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/cb6ab1dd-e48a-46b2-b07d-2941443ce4ed" />  
+
+`select invoice_partner_display_name,name, invoice_date, amount_untaxed FROM public.account_move where move_type='out_refund' and invoice_date is not null order by invoice_date DESC;`
+
+### Apartado 6  
+Utilizando las tablas de odoo, obtén un listado de empresas clientes, a las que se les ha emitido más de dos facturas de venta (solo venta) confirmadas, mostrando los siguientes datos: 
+- Nombre de la empresa
+- Número de facturas
+- Total facturado SIN IMPUESTOS
+
+`select invoice_partner_display_name nome_empresa, count(*) num_facturas, SUM(amount_untaxed) suma_total_facturas
+FROM public.account_move 
+WHERE move_type='out_invoice' and state='posted'
+GROUP BY nome_empresa having count(*)>2
+;`  
+
+SUM -> para suma total sin impuestos.  
+move_type y state -> para saber que las facturas son confirmadas y no borradores.  
+Group by + having -> agruparlos en ... y teniendo en cuenta los que tienen más de dos facturas.  
+
+<img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/6aebaebb-60de-4f6f-9246-33e7a332cdb0" />
+
+### APARTADO 7   
+Crea una sentencia que actualice el correo de los contactos cuyo dominio es 
+@bilbao.example.com a @bilbao.bizkaia.eus  
+
+`UPDATE public.res_partner SET  email=REPLACE(email,'%@bilbao.example.com','bilbao.bizkaia.eus') WHERE email LIKE '%@bilbao.example.com';`  
+
+- UPADTE -> actualizar.  
+- La combinación de UPDATE y REPLACE permite actualizar valores en la columna `email` reemplazando partes específicas de una cadena (correo 1 con correo 2).  
+- LIKE `%@` -> con los correos que terminen en la dirección dada.
+
+<img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/8d7a2db0-e44c-4822-a1f9-e3a220b2d34a" />  
+
+
+
+
+
+
+
