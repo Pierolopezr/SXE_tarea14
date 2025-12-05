@@ -35,12 +35,21 @@ Realiza una consulta que permita obtener un listado de todos los contactos de Od
 
 <img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/ca54ba67-64c3-4f7f-8e5f-9c30a4cdaf21" />
 
-APARTADO 5  
+### Apartado 5  
+Utilizando las tablas de odoo, obtén un listado de empresas proveedoras, que han 
+emitido algún reembolso (facturas rectificativas de proveedor) 
+- Nombre de la empresa
+- Número de factura
+- Fecha de la factura
+- Total factura SIN impuestos  
+Ordenadas por fecha de factura de modo que la primera sea la más reciente.  
 
-<img width="1599" height="876" alt="image" src="https://github.com/user-attachments/assets/cb6ab1dd-e48a-46b2-b07d-2941443ce4ed" />  
-select invoice_partner_display_name,name, invoice_date, amount_untaxed FROM public.account_move where move_type='out_refund' and invoice_date is not null order by invoice_date DESC;
+<img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/cb6ab1dd-e48a-46b2-b07d-2941443ce4ed" />  
+
+`select invoice_partner_display_name,name, invoice_date, amount_untaxed FROM public.account_move where move_type='out_refund' and invoice_date is not null order by invoice_date DESC;`
 
 APARTADO 6  
+
 select invoice_partner_display_name nome_empresa, count(*) num_facturas, SUM(amount_untaxed) suma_total_facturas
 FROM public.account_move 
 WHERE move_type='out_invoice' and state='posted'
@@ -53,6 +62,7 @@ APARTADO 7
 UPDATE public.res_partner
 	SET  email=REPLACE(email,'%@bilbao.example.com','bilbao.bizkaia.eus') WHERE email LIKE '%@bilbao.example.com';  
 <img width="1692" height="995" alt="image" src="https://github.com/user-attachments/assets/8d7a2db0-e44c-4822-a1f9-e3a220b2d34a" />  
+
 
 
 
