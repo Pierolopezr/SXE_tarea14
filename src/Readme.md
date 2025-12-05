@@ -21,4 +21,16 @@ APARTADO 5
 <img width="1599" height="876" alt="image" src="https://github.com/user-attachments/assets/cb6ab1dd-e48a-46b2-b07d-2941443ce4ed" />  
 select invoice_partner_display_name,name, invoice_date, amount_untaxed FROM public.account_move where move_type='out_refund' and invoice_date is not null order by invoice_date DESC;
 
-APARTADO 6 
+APARTADO 6  
+select invoice_partner_display_name nome_empresa, count(*) num_facturas, SUM(amount_untaxed) suma_total_facturas
+FROM public.account_move 
+WHERE move_type='out_invoice' and state='posted'
+GROUP BY nome_empresa having count(*)>2
+;  
+
+<img width="1635" height="1019" alt="image" src="https://github.com/user-attachments/assets/6aebaebb-60de-4f6f-9246-33e7a332cdb0" />
+
+APARTADO 7    
+UPDATE public.res_partner
+	SET  email=REPLACE(email,'%@bilbao.example.com','bilbao.bizkaia.eus') WHERE email LIKE '%@bilbao.example.com';  
+<img width="1692" height="995" alt="image" src="https://github.com/user-attachments/assets/8d7a2db0-e44c-4822-a1f9-e3a220b2d34a" />  
