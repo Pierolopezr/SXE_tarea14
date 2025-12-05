@@ -12,3 +12,13 @@ Apartado 2
 
 Apartado 3  
 <img width="1073" height="597" alt="image" src="https://github.com/user-attachments/assets/41ff8a3a-020d-469c-bb73-0995e2bfd975" />
+
+Apartado 4 
+
+<img width="1467" height="896" alt="image" src="https://github.com/user-attachments/assets/39422db2-0ce9-406f-b9e6-07cb870581e5" />
+APARTADO 5  
+
+<img width="1599" height="876" alt="image" src="https://github.com/user-attachments/assets/cb6ab1dd-e48a-46b2-b07d-2941443ce4ed" />  
+select invoice_partner_display_name,name, invoice_date, amount_untaxed FROM public.account_move where move_type='out_refund' and invoice_date is not null order by invoice_date DESC;
+
+APARTADO 6 
