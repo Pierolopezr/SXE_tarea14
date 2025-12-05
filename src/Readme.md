@@ -22,11 +22,19 @@ ordenados por fechaContacto, de modo que en la primera fila salga el que tenga l
 fecha más reciente. 
 
 Mediante los comandos `SELECT * FROM public."EmpresasFCT" ORDER BY "fechaContacto" DESC;` , nos generará lo pedido. 
-<img width="1073" height="597" alt="image" src="https://github.com/user-attachments/assets/41ff8a3a-020d-469c-bb73-0995e2bfd975" />
 
-Apartado 4 
+<img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/41ff8a3a-020d-469c-bb73-0995e2bfd975" />  
 
-<img width="1467" height="896" alt="image" src="https://github.com/user-attachments/assets/39422db2-0ce9-406f-b9e6-07cb870581e5" />
+### Apartado 4
+Realiza una consulta que permita obtener un listado de todos los contactos de Odoo (no empresas) con la siguiente información: 
+- Nombre
+- Cuya ciudad NO sea Tracy
+- Nombre comercial de la empresa ordenados alfabéticamente por el nombre comercial de la empresa.
+
+`SELECT name, commercial_company_name FROM public.res_partner where is_company=FALSE and city!='Tracy' ORDER BY commercial_company_name`  
+
+<img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/ca54ba67-64c3-4f7f-8e5f-9c30a4cdaf21" />
+
 APARTADO 5  
 
 <img width="1599" height="876" alt="image" src="https://github.com/user-attachments/assets/cb6ab1dd-e48a-46b2-b07d-2941443ce4ed" />  
@@ -45,6 +53,7 @@ APARTADO 7
 UPDATE public.res_partner
 	SET  email=REPLACE(email,'%@bilbao.example.com','bilbao.bizkaia.eus') WHERE email LIKE '%@bilbao.example.com';  
 <img width="1692" height="995" alt="image" src="https://github.com/user-attachments/assets/8d7a2db0-e44c-4822-a1f9-e3a220b2d34a" />  
+
 
 
 
