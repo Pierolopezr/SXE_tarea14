@@ -64,12 +64,20 @@ SUM -> para suma total sin impuestos.
 move_type y state -> para saber que las facturas son confirmadas y no borradores.  
 Group by + having -> agruparlos en ... y teniendo en cuenta los que tienen más de dos facturas.  
 
-<img width="1635" height="1019" alt="image" src="https://github.com/user-attachments/assets/6aebaebb-60de-4f6f-9246-33e7a332cdb0" />
+<img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/6aebaebb-60de-4f6f-9246-33e7a332cdb0" />
 
-APARTADO 7    
-UPDATE public.res_partner
-	SET  email=REPLACE(email,'%@bilbao.example.com','bilbao.bizkaia.eus') WHERE email LIKE '%@bilbao.example.com';  
-<img width="1692" height="995" alt="image" src="https://github.com/user-attachments/assets/8d7a2db0-e44c-4822-a1f9-e3a220b2d34a" />  
+### APARTADO 7   
+Crea una sentencia que actualice el correo de los contactos cuyo dominio es 
+@bilbao.example.com a @bilbao.bizkaia.eus  
+
+`UPDATE public.res_partner SET  email=REPLACE(email,'%@bilbao.example.com','bilbao.bizkaia.eus') WHERE email LIKE '%@bilbao.example.com';`  
+
+- UPADTE -> actualizar.  
+- La combinación de UPDATE y REPLACE permite actualizar valores en la columna `email` reemplazando partes específicas de una cadena (correo 1 con correo 2).  
+- LIKE `%@` -> con los correos que terminen en la dirección dada.
+
+<img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/8d7a2db0-e44c-4822-a1f9-e3a220b2d34a" />  
+
 
 
 
