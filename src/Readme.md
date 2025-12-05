@@ -16,9 +16,12 @@ Insertamos 5 registros inventados en la tabla a través de una sentencia SQL.
 <img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/0eba2b0e-7750-4114-9e09-1baee029c387" />  
 <img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/e727fb18-345c-47ba-bfde-0b776ecdbfc8" />  
 
+### Apartado 3  
+Realiza una consulta donde se muestren todos los datos de la tabla EmpresasFCT 
+ordenados por fechaContacto, de modo que en la primera fila salga el que tenga la 
+fecha más reciente. 
 
-
-Apartado 3  
+Mediante los comandos `SELECT * FROM public."EmpresasFCT" ORDER BY "fechaContacto" DESC;` , nos generará lo pedido. 
 <img width="1073" height="597" alt="image" src="https://github.com/user-attachments/assets/41ff8a3a-020d-469c-bb73-0995e2bfd975" />
 
 Apartado 4 
@@ -42,5 +45,6 @@ APARTADO 7
 UPDATE public.res_partner
 	SET  email=REPLACE(email,'%@bilbao.example.com','bilbao.bizkaia.eus') WHERE email LIKE '%@bilbao.example.com';  
 <img width="1692" height="995" alt="image" src="https://github.com/user-attachments/assets/8d7a2db0-e44c-4822-a1f9-e3a220b2d34a" />  
+
 
 
